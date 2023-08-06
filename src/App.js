@@ -3,9 +3,9 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <District></District>
-      <District></District>
-      <District></District>
+      <District name='Cumilla' special='Bus Stop'></District>
+      <District name='Sylhet' special='Nature'></District>
+      <District name='Chittagong' special='Hilly Area'></District>
     </div>
   );
 }
@@ -16,11 +16,11 @@ const district = {
   margin:'5px',
   borderRadius:'10px'
 }
-function District () {
+function District (props) {
   return (
     <div style={district}>
-      <h5>Name : </h5>
-      <p>Special : </p>
+      <h5>Name : {props.name}</h5>
+      <p>Special : {props.special}</p>
     </div>
   )
 }
