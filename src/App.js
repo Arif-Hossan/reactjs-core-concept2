@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import './App.css';
 
 function App() {
@@ -17,10 +18,15 @@ const district = {
   borderRadius:'10px'
 }
 function District (props) {
+  //power state declaration
+  const [power,setPower] = useState(1);
+  const boostPower = () =>setPower(power*2);
   return (
     <div style={district}>
       <h5>Name : {props.name}</h5>
       <p>Special : {props.special}</p>
+      <h6>Power : {power}</h6>
+      <button onClick={boostPower}>Boost Power</button>
     </div>
   )
 }
